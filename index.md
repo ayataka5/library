@@ -7,11 +7,6 @@ data:
       path: data-structure/unionfind.hpp
       title: UnionFind
   verificationCategories:
-  - name: example
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: example/example.test.cpp
-      title: example/example.test.cpp
   - name: verify/verify-aoj
     pages:
     - icon: ':heavy_check_mark:'
