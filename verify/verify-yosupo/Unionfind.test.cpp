@@ -13,7 +13,7 @@ int main() {
         int t, u, v;
         cin >> t >> u >> v;
         if(t == 0) uf.unite(u, v);
-        if(t == 1) cout << (uf.same(u, v)) << endl;
+        else cout << (uf.same(u, v)) << endl;
     }
     return 0;
 }
