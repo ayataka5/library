@@ -14,7 +14,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"verify/verify-yosupo/Unionfind.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"verify/verify-yosupo/unionfind.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 2 \"data-structure/unionfind.hpp\"\n\nstruct UnionFind\
     \ {\n\nprotected:\n    ::std::vector<int> parent;\n    ::std::vector<int> v_size;\n\
@@ -31,7 +31,7 @@ data:
     \ y);\n            }\n            v_size[x] += v_size[y];\n            parent[y]\
     \ = x;\n        }\n        return ::std::make_pair(x, y);\n    }\n};\n\n/**\n\
     \ * @brief UnionFind\n * @docs docs/data-structure/unionfind.md\n */\n#line 7\
-    \ \"verify/verify-yosupo/Unionfind.test.cpp\"\n\nint main() {\n    int N, Q;\n\
+    \ \"verify/verify-yosupo/unionfind.test.cpp\"\n\nint main() {\n    int N, Q;\n\
     \    cin >> N >> Q;\n    UnionFind uf(N);\n    while(Q--) {\n        int t, u,\
     \ v;\n        cin >> t >> u >> v;\n        if(t == 0) uf.unite(u, v);\n      \
     \  else cout << (uf.same(u, v)) << endl;\n    }\n    return 0;\n}\n"
@@ -44,15 +44,15 @@ data:
   dependsOn:
   - data-structure/unionfind.hpp
   isVerificationFile: true
-  path: verify/verify-yosupo/Unionfind.test.cpp
+  path: verify/verify-yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-04-03 16:23:58+09:00'
+  timestamp: '2024-09-29 01:40:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/verify-yosupo/Unionfind.test.cpp
+documentation_of: verify/verify-yosupo/unionfind.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/verify-yosupo/Unionfind.test.cpp
-- /verify/verify/verify-yosupo/Unionfind.test.cpp.html
-title: verify/verify-yosupo/Unionfind.test.cpp
+- /verify/verify/verify-yosupo/unionfind.test.cpp
+- /verify/verify/verify-yosupo/unionfind.test.cpp.html
+title: verify/verify-yosupo/unionfind.test.cpp
 ---

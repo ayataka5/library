@@ -7,8 +7,8 @@ data:
     path: verify/verify-aoj/aoj-dsl-1-a.test.cpp
     title: verify/verify-aoj/aoj-dsl-1-a.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/verify-yosupo/Unionfind.test.cpp
-    title: verify/verify-yosupo/Unionfind.test.cpp
+    path: verify/verify-yosupo/unionfind.test.cpp
+    title: verify/verify-yosupo/unionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -53,7 +53,7 @@ data:
   timestamp: '2024-02-21 23:31:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/verify-yosupo/Unionfind.test.cpp
+  - verify/verify-yosupo/unionfind.test.cpp
   - verify/verify-aoj/aoj-dsl-1-a.test.cpp
 documentation_of: data-structure/unionfind.hpp
 layout: document
