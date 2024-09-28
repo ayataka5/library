@@ -8,7 +8,7 @@ using namespace std;
 const long long mod = 998244353;
 
 int main() {
-    auto inv = [](const long long x) { return (-x+mod)%mod; };
+    auto inv = [](const long long x) { return (mod-x)%mod; };
     auto op = [](const long long x, const long long y) { return (x+y)%mod; };
     auto e = []() { return 0LL; };
 
@@ -27,12 +27,16 @@ int main() {
                 UF.unite(u, v, x);
                 cout << 1 << endl;
             }else {
-                cout << ((UF.distance(u, v) != x) ? 0 : 1) << endl;
+                cout << (UF.distance(u, v) == x) << endl;
             }
         }else {
             int u, v;
             cin >> u >> v;
-            cout << (UF.same(u, v) ? UF.distance(u, v) : -1) << endl;
+            if(UF.same(u, v)) {
+                cout << UF.distance(u, v) << endl;
+            }else {
+                cout << -1 << endl;
+            }
         }
     }
     return 0;
