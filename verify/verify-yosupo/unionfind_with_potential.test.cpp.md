@@ -17,7 +17,7 @@ data:
   bundledCode: "#line 1 \"verify/verify-yosupo/unionfind_with_potential.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind_with_potential\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"data-structure/unionfind_with_potential.hpp\"\
-    \n\ntemplate<class S, auto inv, auto op, auto e> struct UnionFindWithPotential\
+    \n\ntemplate<class S, S (*op)(S, S), S (*e)(), S (*inv)(S)> struct UnionFindWithPotential\
     \ {\n\nprotected:\n    ::std::vector<int> parent;\n    ::std::vector<int> v_size;\n\
     \    ::std::vector<S> v_potential;\n\n    void compress(const int v) {\n     \
     \   if(parent[v] != v) {\n            compress(parent[v]);\n            v_potential[v]\
@@ -40,40 +40,40 @@ data:
     \     y = find(y);\n        v_size[x] += v_size[y];\n        parent[y] = x;\n\
     \        v_potential[y] = z;\n    }\n};\n\n/**\n * @brief UnionFind with Potential\n\
     \ * @docs docs/data-structure/unionfind_with_potential.md\n */\n#line 7 \"verify/verify-yosupo/unionfind_with_potential.test.cpp\"\
-    \n\nconst long long mod = 998244353;\n\nint main() {\n    auto inv = [](const\
-    \ long long x) { return (mod-x)%mod; };\n    auto op = [](const long long x, const\
-    \ long long y) { return (x+y)%mod; };\n    auto e = []() { return 0LL; };\n\n\
-    \    int N, Q;\n    cin >> N >> Q;\n    UnionFindWithPotential<long long, inv,\
-    \ op, e> UF(N);\n    while(Q--) {\n        int t;\n        cin >> t;\n       \
-    \ if(t == 0) {\n            int u, v;\n            cin >> u >> v;\n          \
-    \  long long x;\n            cin >> x;\n            if(!UF.same(u, v)) {\n   \
-    \             UF.unite(u, v, x);\n                cout << 1 << endl;\n       \
-    \     }else {\n                cout << (UF.distance(u, v) == x) << endl;\n   \
-    \         }\n        }else {\n            int u, v;\n            cin >> u >> v;\n\
-    \            if(UF.same(u, v)) {\n                cout << UF.distance(u, v) <<\
-    \ endl;\n            }else {\n                cout << -1 << endl;\n          \
-    \  }\n        }\n    }\n    return 0;\n}\n"
+    \n\nconst long long mod = 998244353;\n\nlong long op(const long long x, const\
+    \ long long y) { return (x+y)%mod; }\nlong long e() { return 0LL; }\nlong long\
+    \ inv(const long long x) { return (mod-x)%mod; }\n\nint main() {\n    int N, Q;\n\
+    \    cin >> N >> Q;\n    UnionFindWithPotential<long long, op, e, inv> UF(N);\n\
+    \    while(Q--) {\n        int t;\n        cin >> t;\n        if(t == 0) {\n \
+    \           int u, v;\n            cin >> u >> v;\n            long long x;\n\
+    \            cin >> x;\n            if(!UF.same(u, v)) {\n                UF.unite(u,\
+    \ v, x);\n                cout << 1 << endl;\n            }else {\n          \
+    \      cout << (UF.distance(u, v) == x) << endl;\n            }\n        }else\
+    \ {\n            int u, v;\n            cin >> u >> v;\n            if(UF.same(u,\
+    \ v)) {\n                cout << UF.distance(u, v) << endl;\n            }else\
+    \ {\n                cout << -1 << endl;\n            }\n        }\n    }\n  \
+    \  return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind_with_potential\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../data-structure/unionfind_with_potential.hpp\"\
-    \n\nconst long long mod = 998244353;\n\nint main() {\n    auto inv = [](const\
-    \ long long x) { return (mod-x)%mod; };\n    auto op = [](const long long x, const\
-    \ long long y) { return (x+y)%mod; };\n    auto e = []() { return 0LL; };\n\n\
-    \    int N, Q;\n    cin >> N >> Q;\n    UnionFindWithPotential<long long, inv,\
-    \ op, e> UF(N);\n    while(Q--) {\n        int t;\n        cin >> t;\n       \
-    \ if(t == 0) {\n            int u, v;\n            cin >> u >> v;\n          \
-    \  long long x;\n            cin >> x;\n            if(!UF.same(u, v)) {\n   \
-    \             UF.unite(u, v, x);\n                cout << 1 << endl;\n       \
-    \     }else {\n                cout << (UF.distance(u, v) == x) << endl;\n   \
-    \         }\n        }else {\n            int u, v;\n            cin >> u >> v;\n\
-    \            if(UF.same(u, v)) {\n                cout << UF.distance(u, v) <<\
-    \ endl;\n            }else {\n                cout << -1 << endl;\n          \
-    \  }\n        }\n    }\n    return 0;\n}"
+    \n\nconst long long mod = 998244353;\n\nlong long op(const long long x, const\
+    \ long long y) { return (x+y)%mod; }\nlong long e() { return 0LL; }\nlong long\
+    \ inv(const long long x) { return (mod-x)%mod; }\n\nint main() {\n    int N, Q;\n\
+    \    cin >> N >> Q;\n    UnionFindWithPotential<long long, op, e, inv> UF(N);\n\
+    \    while(Q--) {\n        int t;\n        cin >> t;\n        if(t == 0) {\n \
+    \           int u, v;\n            cin >> u >> v;\n            long long x;\n\
+    \            cin >> x;\n            if(!UF.same(u, v)) {\n                UF.unite(u,\
+    \ v, x);\n                cout << 1 << endl;\n            }else {\n          \
+    \      cout << (UF.distance(u, v) == x) << endl;\n            }\n        }else\
+    \ {\n            int u, v;\n            cin >> u >> v;\n            if(UF.same(u,\
+    \ v)) {\n                cout << UF.distance(u, v) << endl;\n            }else\
+    \ {\n                cout << -1 << endl;\n            }\n        }\n    }\n  \
+    \  return 0;\n}"
   dependsOn:
   - data-structure/unionfind_with_potential.hpp
   isVerificationFile: true
   path: verify/verify-yosupo/unionfind_with_potential.test.cpp
   requiredBy: []
-  timestamp: '2024-09-30 14:54:47+09:00'
+  timestamp: '2024-09-30 15:33:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/verify-yosupo/unionfind_with_potential.test.cpp

@@ -15,6 +15,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/verify-aoj/aoj-dsl-1-a.test.cpp
       title: verify/verify-aoj/aoj-dsl-1-a.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/verify-aoj/aoj-dsl-1-b.test.cpp
+      title: verify/verify-aoj/aoj-dsl-1-b.test.cpp
   - name: verify/verify-yosupo
     pages:
     - icon: ':heavy_check_mark:'
