@@ -7,16 +7,16 @@ protected:
     ::std::vector<int> v_size;
     ::std::vector<S> v_potential;
 
-    void func(int v) {
+    void compress(const int v) {
         if(parent[v] != v) {
-            func(parent[v]);
+            compress(parent[v]);
             v_potential[v] = op(v_potential[parent[v]], v_potential[v]);
             parent[v] = parent[parent[v]];
         }else { return; }
     }
 
 public:
-    UnionFindWithPotential(int n) : parent(n, 0), v_size(n, 1), v_potential(n, e()) {
+    UnionFindWithPotential(const int n) : parent(n, 0), v_size(n, 1), v_potential(n, e()) {
         for(int i = 0; i < n; i++) parent[i] = i;
     }
 
@@ -24,19 +24,19 @@ public:
 
     int find(const int x) {
         assert(x < size());
-        func(x);
+        compress(x);
         return parent[x];
+    }
+
+    S potential(const int x) {
+        assert(x < size());
+        compress(x);
+        return v_potential[x];
     }
 
     bool same(const int x, const int y) {
         assert(x < size()); assert(y < size());
         return (find(x) == find(y));
-    }
-
-    S potential(const int x) {
-        assert(x < size());
-        func(x);
-        return v_potential[x];
     }
 
     S distance(const int x, const int y) {
@@ -58,11 +58,11 @@ public:
             ::std::swap(x, y);
         }
 
-        x = find(x);
-        y = find(y);
-        v_size[x] += v_size[y];
-        parent[y] = x;
-        v_potential[y] = op(op(potential(x), z), inv(potential(y)));
+        int nx = find(x);
+        int ny = find(y);
+        v_size[nx] += v_size[ny];
+        parent[ny] = nx;
+        v_potential[ny] = op(op(potential(x), z), inv(potential(y)));
     }
 };
 
