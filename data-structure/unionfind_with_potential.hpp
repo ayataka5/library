@@ -1,6 +1,6 @@
 #pragma once
 
-template<class S, auto inv, auto op, auto e> struct UnionFindWithPotential {
+template<class S, S (*op)(S, S), S (*e)(), S (*inv)(S)> struct UnionFindWithPotential {
 
 protected:
     ::std::vector<int> parent;

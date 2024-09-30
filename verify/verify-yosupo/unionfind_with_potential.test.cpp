@@ -7,14 +7,14 @@ using namespace std;
 
 const long long mod = 998244353;
 
-int main() {
-    auto inv = [](const long long x) { return (mod-x)%mod; };
-    auto op = [](const long long x, const long long y) { return (x+y)%mod; };
-    auto e = []() { return 0LL; };
+long long op(const long long x, const long long y) { return (x+y)%mod; }
+long long e() { return 0LL; }
+long long inv(const long long x) { return (mod-x)%mod; }
 
+int main() {
     int N, Q;
     cin >> N >> Q;
-    UnionFindWithPotential<long long, inv, op, e> UF(N);
+    UnionFindWithPotential<long long, op, e, inv> UF(N);
     while(Q--) {
         int t;
         cin >> t;
