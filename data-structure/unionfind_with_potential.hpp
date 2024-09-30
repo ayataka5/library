@@ -58,11 +58,12 @@ public:
             ::std::swap(x, y);
         }
 
-        int nx = find(x);
-        int ny = find(y);
-        v_size[nx] += v_size[ny];
-        parent[ny] = nx;
-        v_potential[ny] = op(op(potential(x), z), inv(potential(y)));
+        z = op(op(potential(x), z), inv(potential(y)));
+        x = find(x);
+        y = find(y);
+        v_size[x] += v_size[y];
+        parent[y] = x;
+        v_potential[y] = z;
     }
 };
 
