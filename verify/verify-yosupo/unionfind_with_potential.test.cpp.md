@@ -25,15 +25,15 @@ data:
     \        }else { return; }\n    }\n\npublic:\n    UnionFindWithPotential(const\
     \ int n) : parent(n, 0), v_size(n, 1), v_potential(n, e()) {\n        for(int\
     \ i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int size() const { return ::std::size(parent);\
-    \ }\n\n    int find(const int x) {\n        assert(x < size());\n        compress(x);\n\
-    \        return parent[x];\n    }\n\n    S potential(const int x) {\n        assert(x\
-    \ < size());\n        compress(x);\n        return v_potential[x];\n    }\n\n\
-    \    bool same(const int x, const int y) {\n        assert(x < size()); assert(y\
-    \ < size());\n        return (find(x) == find(y));\n    }\n\n    S distance(const\
+    \ }\n\n    int size(const int x) {\n        assert(x < size());\n        return\
+    \ v_size[find(x)];\n    }\n\n    int find(const int x) {\n        assert(x < size());\n\
+    \        compress(x);\n        return parent[x];\n    }\n\n    bool same(const\
     \ int x, const int y) {\n        assert(x < size()); assert(y < size());\n   \
-    \     return op(inv(potential(x)), potential(y));\n    }\n\n    int size(const\
-    \ int x) {\n        assert(x < size());\n        return v_size[find(x)];\n   \
-    \ }\n\n    void unite(int x, int y, S z) {\n        assert(x < size()); assert(y\
+    \     return (find(x) == find(y));\n    }\n\n    S potential(const int x) {\n\
+    \        assert(x < size());\n        compress(x);\n        return v_potential[x];\n\
+    \    }\n\n    S distance(const int x, const int y) {\n        assert(x < size());\
+    \ assert(y < size());\n        return op(inv(potential(x)), potential(y));\n \
+    \   }\n\n    void unite(int x, int y, S z) {\n        assert(x < size()); assert(y\
     \ < size());\n        assert(!same(x, y));\n\n        if(size(x) < size(y)) {\n\
     \            z = inv(z);\n            ::std::swap(x, y);\n        }\n\n      \
     \  z = op(op(potential(x), z), inv(potential(y)));\n        x = find(x);\n   \
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/verify-yosupo/unionfind_with_potential.test.cpp
   requiredBy: []
-  timestamp: '2024-09-30 14:15:50+09:00'
+  timestamp: '2024-09-30 14:54:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/verify-yosupo/unionfind_with_potential.test.cpp
