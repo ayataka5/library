@@ -22,10 +22,20 @@ public:
 
     int size() const { return ::std::size(parent); }
 
+    int size(const int x) {
+        assert(x < size());
+        return v_size[find(x)];
+    }
+
     int find(const int x) {
         assert(x < size());
         compress(x);
         return parent[x];
+    }
+
+    bool same(const int x, const int y) {
+        assert(x < size()); assert(y < size());
+        return (find(x) == find(y));
     }
 
     S potential(const int x) {
@@ -34,19 +44,9 @@ public:
         return v_potential[x];
     }
 
-    bool same(const int x, const int y) {
-        assert(x < size()); assert(y < size());
-        return (find(x) == find(y));
-    }
-
     S distance(const int x, const int y) {
         assert(x < size()); assert(y < size());
         return op(inv(potential(x)), potential(y));
-    }
-
-    int size(const int x) {
-        assert(x < size());
-        return v_size[find(x)];
     }
 
     void unite(int x, int y, S z) {
