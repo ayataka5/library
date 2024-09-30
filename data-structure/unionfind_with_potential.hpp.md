@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/verify-yosupo/unionfind_with_potential.test.cpp
     title: verify/verify-yosupo/unionfind_with_potential.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/data-structure/unionfind_with_potential.md
     document_title: UnionFind with Potential
@@ -33,10 +33,10 @@ data:
     \ }\n\n    void unite(int x, int y, S z) {\n        assert(x < size()); assert(y\
     \ < size());\n        assert(!same(x, y));\n\n        if(size(x) < size(y)) {\n\
     \            z = inv(z);\n            ::std::swap(x, y);\n        }\n\n      \
-    \  int nx = find(x);\n        int ny = find(y);\n        v_size[nx] += v_size[ny];\n\
-    \        parent[ny] = nx;\n        v_potential[ny] = op(op(potential(x), z), inv(potential(y)));\n\
-    \    }\n};\n\n/**\n * @brief UnionFind with Potential\n * @docs docs/data-structure/unionfind_with_potential.md\n\
-    \ */\n"
+    \  z = op(op(potential(x), z), inv(potential(y)));\n        x = find(x);\n   \
+    \     y = find(y);\n        v_size[x] += v_size[y];\n        parent[y] = x;\n\
+    \        v_potential[y] = z;\n    }\n};\n\n/**\n * @brief UnionFind with Potential\n\
+    \ * @docs docs/data-structure/unionfind_with_potential.md\n */\n"
   code: "#pragma once\n\ntemplate<class S, auto inv, auto op, auto e> struct UnionFindWithPotential\
     \ {\n\nprotected:\n    ::std::vector<int> parent;\n    ::std::vector<int> v_size;\n\
     \    ::std::vector<S> v_potential;\n\n    void compress(const int v) {\n     \
@@ -56,16 +56,16 @@ data:
     \ }\n\n    void unite(int x, int y, S z) {\n        assert(x < size()); assert(y\
     \ < size());\n        assert(!same(x, y));\n\n        if(size(x) < size(y)) {\n\
     \            z = inv(z);\n            ::std::swap(x, y);\n        }\n\n      \
-    \  int nx = find(x);\n        int ny = find(y);\n        v_size[nx] += v_size[ny];\n\
-    \        parent[ny] = nx;\n        v_potential[ny] = op(op(potential(x), z), inv(potential(y)));\n\
-    \    }\n};\n\n/**\n * @brief UnionFind with Potential\n * @docs docs/data-structure/unionfind_with_potential.md\n\
-    \ */"
+    \  z = op(op(potential(x), z), inv(potential(y)));\n        x = find(x);\n   \
+    \     y = find(y);\n        v_size[x] += v_size[y];\n        parent[y] = x;\n\
+    \        v_potential[y] = z;\n    }\n};\n\n/**\n * @brief UnionFind with Potential\n\
+    \ * @docs docs/data-structure/unionfind_with_potential.md\n */"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/unionfind_with_potential.hpp
   requiredBy: []
-  timestamp: '2024-09-30 14:13:49+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-09-30 14:15:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/verify-yosupo/unionfind_with_potential.test.cpp
 documentation_of: data-structure/unionfind_with_potential.hpp

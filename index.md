@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/unionfind.hpp
       title: UnionFind
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/unionfind_with_potential.hpp
       title: UnionFind with Potential
   verificationCategories:
@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/verify-yosupo/unionfind.test.cpp
       title: verify/verify-yosupo/unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/verify-yosupo/unionfind_with_potential.test.cpp
       title: verify/verify-yosupo/unionfind_with_potential.test.cpp
 layout: toppage
