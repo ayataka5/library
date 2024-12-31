@@ -13,7 +13,7 @@ int main() {
     for(int i = 0; i < N; i++) cin >> A[i];
     for(int i = 0; i < M; i++) cin >> B[i];
     vector<long long> P(convolution(A, B));
-    for(int i = 0; i < (int)size(P); i++) {
+    for(int i = 0; i < N+M-1; i++) {
         cout << P[i] << " \n"[i==(int)size(P)-1];
     }
     return 0;
