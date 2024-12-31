@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: convolution
+    pages:
+    - icon: ':x:'
+      path: convolution/convolution.hpp
+      title: Convolution mod 998244353
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -20,6 +25,9 @@ data:
       title: verify/verify-aoj/aoj-dsl-1-b.test.cpp
   - name: verify/verify-yosupo
     pages:
+    - icon: ':x:'
+      path: verify/verify-yosupo/convolution.test.cpp
+      title: verify/verify-yosupo/convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/verify-yosupo/unionfind.test.cpp
       title: verify/verify-yosupo/unionfind.test.cpp
