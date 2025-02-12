@@ -6,4 +6,4 @@ This is my C++ library for competitive programming.
 [![Actions Status](https://github.com/ayataka5/library/workflows/verify/badge.svg)](https://github.com/ayataka5/library/actions)
 [![ayataka5](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fatcoder%2Fjson%2Fayataka5)](https://atcoder.jp/users/ayataka5)
 [![ayataka5](https://img.shields.io/endpoint?url=https%3A%2F%2Fatcoder-badges.now.sh%2Fapi%2Fcodeforces%2Fjson%2Fayataka5)](https://codeforces.com/profile/ayataka5)
-[![Static Badge](https://img.shields.io/badge/Repository-verify_helper-blue?logo=GitHub)](https://github.com/online-judge-tools/Fverification-helper)
+[![Static Badge](https://img.shields.io/badge/Repository-verify_helper-blue?logo=GitHub)](https://github.com/online-judge-tools/verification-helper)
