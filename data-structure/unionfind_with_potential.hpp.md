@@ -71,8 +71,8 @@ data:
   timestamp: '2024-09-30 15:33:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/verify-yosupo/unionfind_with_potential.test.cpp
   - verify/verify-aoj/aoj-dsl-1-b.test.cpp
+  - verify/verify-yosupo/unionfind_with_potential.test.cpp
 documentation_of: data-structure/unionfind_with_potential.hpp
 layout: document
 redirect_from:
